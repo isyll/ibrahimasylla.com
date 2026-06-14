@@ -32,7 +32,7 @@ export function Section({
         >
           <div className="sm:pt-1.5">
             <Reveal>
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              <p className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
                 {kicker}
               </p>
             </Reveal>

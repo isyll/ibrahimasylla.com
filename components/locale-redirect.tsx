@@ -17,7 +17,7 @@ export function LocaleRedirect({ fallback }: { fallback: string }) {
   return (
     <main className="flex flex-1 items-center justify-center px-6 py-20">
       <div className="text-center">
-        <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
           {siteConfig.name}
         </p>
         <div className="mt-6 flex items-center justify-center gap-3 text-sm">

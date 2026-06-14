@@ -8,13 +8,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { pick } from "@/i18n/localized";
 
-export function Work({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export function Work({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <Section id="work" kicker={dict.work.kicker}>
       <Reveal>
@@ -36,7 +30,7 @@ export function Work({
                     {project.name}
                     <ArrowUpRight className="size-4 text-muted-foreground transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-foreground" />
                   </h3>
-                  <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
                     {pick(project.category, locale)} · {project.year}
                   </span>
                 </div>

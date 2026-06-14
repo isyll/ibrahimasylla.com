@@ -21,7 +21,7 @@ export function Background({
 
       <div className="mt-8 sm:mt-10">
         <Reveal>
-          <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <h3 className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
             {dict.background.educationLabel}
           </h3>
         </Reveal>
@@ -38,7 +38,7 @@ export function Background({
                       {item.school}
                     </p>
                   </div>
-                  <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
                     {item.period}
                   </span>
                 </div>
@@ -48,7 +48,7 @@ export function Background({
         </ul>
 
         <Reveal>
-          <h3 className="mt-12 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <h3 className="mt-12 font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
             {dict.background.toolkitLabel}
           </h3>
         </Reveal>

@@ -78,8 +78,7 @@ export default function RootLayout({
         <noscript>
           <style
             dangerouslySetInnerHTML={{
-              __html:
-                ".reveal{opacity:1 !important;transform:none !important}",
+              __html: ".reveal{opacity:1 !important;transform:none !important}",
             }}
           />
         </noscript>

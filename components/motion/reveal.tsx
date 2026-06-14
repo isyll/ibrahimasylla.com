@@ -13,7 +13,12 @@ interface RevealProps {
   y?: number;
 }
 
-export function Reveal({ children, className, delay = 0, y = 16 }: RevealProps) {
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+  y = 16,
+}: RevealProps) {
   const reduce = useReducedMotion();
 
   return (

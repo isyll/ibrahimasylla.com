@@ -31,7 +31,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
       <Reveal>
         <div className="mt-12">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <p className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
             {dict.contact.elsewhere}
           </p>
           <ul className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">

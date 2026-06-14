@@ -25,48 +25,56 @@ export default async function OpengraphImage({
   const domain = siteConfig.url.replace(/^https?:\/\//, "");
 
   return new ImageResponse(
-    (
+    <div
+      style={{
+        height: "100%",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        backgroundColor: "#1a1917",
+        color: "#fbfaf8",
+        padding: 88,
+        fontFamily: "sans-serif",
+      }}
+    >
       <div
         style={{
-          height: "100%",
-          width: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          backgroundColor: "#1a1917",
-          color: "#fbfaf8",
-          padding: 88,
-          fontFamily: "sans-serif",
+          fontSize: 26,
+          letterSpacing: 4,
+          textTransform: "uppercase",
+          color: "#a8a29e",
         }}
       >
+        {pick(siteConfig.role, locale)} · {siteConfig.location[locale]}
+      </div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <div
           style={{
             display: "flex",
-            fontSize: 26,
-            letterSpacing: 4,
-            textTransform: "uppercase",
-            color: "#a8a29e",
+            fontSize: 120,
+            fontWeight: 600,
+            letterSpacing: -3,
           }}
         >
-          {pick(siteConfig.role, locale)} · {siteConfig.location[locale]}
+          {siteConfig.name}
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{ display: "flex", fontSize: 120, fontWeight: 600, letterSpacing: -3 }}
-          >
-            {siteConfig.name}
-          </div>
-          <div
-            style={{ display: "flex", marginTop: 20, fontSize: 34, color: "#d6d3d1" }}
-          >
-            {dict.hero.statement}
-          </div>
-        </div>
-        <div style={{ display: "flex", fontSize: 26, color: "#a8a29e" }}>
-          {domain}
+        <div
+          style={{
+            display: "flex",
+            marginTop: 20,
+            fontSize: 34,
+            color: "#d6d3d1",
+          }}
+        >
+          {dict.hero.statement}
         </div>
       </div>
-    ),
+      <div style={{ display: "flex", fontSize: 26, color: "#a8a29e" }}>
+        {domain}
+      </div>
+    </div>,
     { ...size },
   );
 }

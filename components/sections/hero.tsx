@@ -9,20 +9,14 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import { pick } from "@/i18n/localized";
 import { cn } from "@/lib/utils";
 
-export function Hero({
-  locale,
-  dict,
-}: {
-  locale: Locale;
-  dict: Dictionary;
-}) {
+export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const resume = pick(siteConfig.resume, locale);
 
   return (
     <section id="top" className="scroll-mt-24">
       <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-20 sm:py-28">
         <Reveal>
-          <p className="inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <p className="inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60 [animation-duration:2.5s] motion-reduce:hidden" />
               <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />

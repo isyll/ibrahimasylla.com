@@ -45,7 +45,7 @@ export function Experience({
                       </span>
                     )}
                   </h3>
-                  <span className="font-mono text-xs tabular-nums text-muted-foreground">
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
                     {pick(item.period, locale)}
                   </span>
                 </div>

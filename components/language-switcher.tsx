@@ -31,7 +31,7 @@ export function LanguageSwitcher({
             hrefLang={value}
             aria-current={value === locale ? "true" : undefined}
             className={cn(
-              "uppercase tracking-wide transition-colors",
+              "tracking-wide uppercase transition-colors",
               value === locale
                 ? "text-foreground"
                 : "text-muted-foreground hover:text-foreground",

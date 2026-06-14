@@ -9,11 +9,13 @@ export const localeNames: Record<Locale, string> = {
   fr: "Français",
 };
 
-export const localeMeta: Record<Locale, { htmlLang: string; ogLocale: string }> =
-  {
-    en: { htmlLang: "en", ogLocale: "en_US" },
-    fr: { htmlLang: "fr", ogLocale: "fr_FR" },
-  };
+export const localeMeta: Record<
+  Locale,
+  { htmlLang: string; ogLocale: string }
+> = {
+  en: { htmlLang: "en", ogLocale: "en_US" },
+  fr: { htmlLang: "fr", ogLocale: "fr_FR" },
+};
 
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
