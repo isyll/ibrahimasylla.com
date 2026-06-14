@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev"
+    },
+    {
+      "name": "Next.js: debug in browser",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000/en",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
