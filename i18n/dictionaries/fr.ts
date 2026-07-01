@@ -10,8 +10,8 @@ export const fr: Dictionary = {
   },
   hero: {
     availability: "Disponible pour de nouveaux projets",
-    statement: "Je conçois des logiciels sur lesquels on peut compter.",
-    lead: "Développeur logiciel à Dakar, au Sénégal, je travaille sur le web et le mobile, des parties visibles aux systèmes qui les font tourner. J’aime que le logiciel reste clair, fiable et simple à utiliser.",
+    statement: "Je développe des applications web et mobiles.",
+    lead: "Je travaille sur le web et le mobile, autant sur l’interface que sur les systèmes qui la font tourner.",
     ctaContact: "Me contacter",
     ctaResume: "CV",
     ctaWork: "Voir mes projets",
@@ -20,9 +20,9 @@ export const fr: Dictionary = {
     kicker: "À propos",
     title: "En quelques mots",
     paragraphs: [
-      "Je n’ai pas commencé par le logiciel. J’ai débuté dans l’administration des réseaux et des systèmes, en apprenant comment les pièces s’assemblent avant d’apprendre à les construire. Cela façonne encore ma façon de travailler : je pense au système entier, pas seulement à la partie devant moi.",
-      "Aujourd’hui, je développe des applications web et mobiles du début à la fin. J’ai travaillé dans un groupe télécom, avec une agence internationale, et à mon compte en indépendant.",
-      "Je suis actuellement développeur chez Soft Valley Labs. Ce qui compte pour moi, c’est un travail clair et fiable, qui tient encore la route un an plus tard.",
+      "J’ai commencé par l’administration des réseaux et des systèmes, avant de me tourner vers le développement logiciel.",
+      "Aujourd’hui, je développe des applications web et mobiles, de l’interface aux systèmes qui les font tourner. J’ai travaillé avec un groupe télécom, une agence internationale, et en indépendant.",
+      "Je suis actuellement développeur chez Soft Valley Labs.",
     ],
   },
   experience: {
@@ -31,21 +31,21 @@ export const fr: Dictionary = {
   },
   work: {
     kicker: "Projets choisis",
-    title: "Quelques réalisations",
+    title: "Réalisations",
     note: "Le reste de mon travail est sur GitHub.",
     viewProject: "Voir le projet",
     viewGithub: "Parcourir GitHub",
   },
   background: {
     kicker: "Parcours",
-    title: "Formation & outils",
+    title: "Formation et outils",
     educationLabel: "Formation",
     toolkitLabel: "Outils",
   },
   contact: {
     kicker: "Contact",
-    title: "Échangeons",
-    body: "Un projet, un poste, ou simplement envie de dire bonjour ? Le plus simple est de m’écrire par e-mail.",
+    title: "Me contacter",
+    body: "Le meilleur moyen de me joindre est par e-mail.",
     emailLabel: "Envoyer un e-mail",
     elsewhere: "Ailleurs",
   },
@@ -66,7 +66,7 @@ export const fr: Dictionary = {
   meta: {
     title: "Ibrahima Sylla · Développeur logiciel",
     description:
-      "Ibrahima Sylla est un développeur logiciel à Dakar, au Sénégal, qui crée des applications web et mobiles fiables. Découvrez son expérience, ses projets et comment le contacter.",
+      "Ibrahima Sylla est un développeur logiciel à Dakar, au Sénégal, qui travaille sur des applications web et mobiles. Découvrez son expérience, ses projets et comment le contacter.",
     ogAlt: "Ibrahima Sylla · Développeur logiciel",
   },
   notFound: {

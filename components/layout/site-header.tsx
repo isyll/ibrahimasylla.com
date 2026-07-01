@@ -46,12 +46,18 @@ export function SiteHeader({
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href={`/${locale}`}
+          aria-label={siteConfig.name}
           className="group inline-flex items-center gap-2.5"
         >
-          <span className="grid size-7 place-items-center rounded-sm bg-brand font-mono text-[0.7rem] font-semibold text-brand-foreground">
-            {siteConfig.initials}
-          </span>
-          <span className="font-display text-sm font-medium tracking-tight transition-opacity group-hover:opacity-70">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="size-[18px] shrink-0"
+          >
+            <path d="M0 0H24L0 24Z" className="fill-brand" />
+            <path d="M24 0V24H0Z" className="fill-current" />
+          </svg>
+          <span className="font-display text-[0.95rem] font-semibold tracking-tight transition-opacity group-hover:opacity-70">
             {siteConfig.name}
           </span>
         </Link>

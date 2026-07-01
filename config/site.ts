@@ -6,7 +6,6 @@ function normalizeUrl(url: string): string {
 
 export const siteConfig = {
   name: "Ibrahima Sylla",
-  initials: "IS",
   role: { en: "Software Developer", fr: "Développeur logiciel" } as Localized,
   location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" } as Localized,
   url: normalizeUrl(
