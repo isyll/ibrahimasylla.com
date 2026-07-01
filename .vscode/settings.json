@@ -18,5 +18,6 @@
     "**/.next": true,
     "**/out": true,
     "**/coverage": true
-  }
+  },
+  "js/ts.experimental.useTsgo": false
 }
