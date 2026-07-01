@@ -52,7 +52,7 @@ export function SiteHeader({
           <svg
             viewBox="0 0 24 24"
             aria-hidden="true"
-            className="size-[18px] shrink-0"
+            className="size-4.5 shrink-0"
           >
             <path d="M0 0H24L0 24Z" className="fill-brand" />
             <path d="M24 0V24H0Z" className="fill-current" />
