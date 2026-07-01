@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 
 import { SiteAnalytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -21,7 +21,7 @@ const fontMono = Geist_Mono({
   display: "swap",
 });
 
-const fontDisplay = Fraunces({
+const fontDisplay = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbfaf8" },
-    { media: "(prefers-color-scheme: dark)", color: "#1a1917" },
+    { media: "(prefers-color-scheme: light)", color: "#fafafb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0f14" },
   ],
 };
 

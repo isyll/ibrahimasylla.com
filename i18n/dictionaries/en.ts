@@ -8,8 +8,8 @@ export const en = {
   },
   hero: {
     availability: "Available for new work",
-    statement: "I build software that people can rely on.",
-    lead: "I’m a software developer based in Dakar, Senegal, working across web and mobile — from the systems underneath to the interface on top. I care about the details that make software clear, dependable, and easy to live with.",
+    statement: "I build software people can rely on.",
+    lead: "I’m a software developer in Dakar, Senegal. I work on web and mobile apps, from the parts users see to the systems behind them. I care about making software clear, reliable, and easy to use.",
     ctaContact: "Get in touch",
     ctaResume: "Résumé",
     ctaWork: "See my work",
@@ -18,9 +18,9 @@ export const en = {
     kicker: "About",
     title: "A short version",
     paragraphs: [
-      "My path into software wasn’t a straight line. I started in network and systems administration — learning how the pieces fit together before I learned to build them. That grounding still shapes how I work: I think about the whole system, not just the part in front of me.",
-      "Today I build web and mobile applications end to end. I’ve worked inside a telecom group, alongside an international agency, and on my own as a freelancer — shipping tools and products that people and businesses depend on every day.",
-      "I’m currently a developer at Soft Valley Labs. What matters most to me is clarity, reliability, and work that still makes sense a year later.",
+      "I didn’t start out in software. I began in network and systems administration, learning how the pieces fit together before I learned to build them. That still shapes how I work: I think about the whole system, not just the part in front of me.",
+      "Now I build web and mobile apps from start to finish. I’ve worked inside a telecom group, with an international agency, and on my own as a freelancer.",
+      "I’m currently a developer at Soft Valley Labs. What matters to me is clear, reliable work that still makes sense a year later.",
     ],
   },
   experience: {
@@ -30,7 +30,7 @@ export const en = {
   work: {
     kicker: "Selected work",
     title: "A few things I’ve built",
-    note: "More of my work lives on GitHub.",
+    note: "More of my work is on GitHub.",
     viewProject: "View project",
     viewGithub: "Browse GitHub",
   },
@@ -43,7 +43,7 @@ export const en = {
   contact: {
     kicker: "Contact",
     title: "Let’s talk",
-    body: "Have a project in mind, a role to fill, or just want to say hello? The most reliable way to reach me is by email — I read everything.",
+    body: "Have a project, a role, or just want to say hello? Email is the best way to reach me.",
     emailLabel: "Send an email",
     elsewhere: "Elsewhere",
   },
@@ -62,10 +62,10 @@ export const en = {
     label: "Language",
   },
   meta: {
-    title: "Ibrahima Sylla — Software Developer",
+    title: "Ibrahima Sylla · Software Developer",
     description:
-      "Ibrahima Sylla is a software developer in Dakar, Senegal, building dependable web and mobile applications. Read about his experience, selected work, and how to get in touch.",
-    ogAlt: "Ibrahima Sylla — Software Developer",
+      "Ibrahima Sylla is a software developer in Dakar, Senegal, building reliable web and mobile apps. See his experience, work, and how to get in touch.",
+    ogAlt: "Ibrahima Sylla · Software Developer",
   },
   notFound: {
     title: "This page doesn’t exist",

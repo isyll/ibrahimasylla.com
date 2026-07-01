@@ -10,7 +10,7 @@ export function generateStaticParams() {
 }
 
 export const dynamic = "force-static";
-export const alt = "Ibrahima Sylla — Software Developer";
+export const alt = "Ibrahima Sylla · Software Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -32,8 +32,8 @@ export default async function OpengraphImage({
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        backgroundColor: "#1a1917",
-        color: "#fbfaf8",
+        backgroundColor: "#0b0f14",
+        color: "#fafafb",
         padding: 88,
         fontFamily: "sans-serif",
       }}
@@ -44,7 +44,7 @@ export default async function OpengraphImage({
           fontSize: 26,
           letterSpacing: 4,
           textTransform: "uppercase",
-          color: "#a8a29e",
+          color: "#8a93a1",
         }}
       >
         {pick(siteConfig.role, locale)} · {siteConfig.location[locale]}
@@ -53,8 +53,17 @@ export default async function OpengraphImage({
         <div
           style={{
             display: "flex",
+            width: 72,
+            height: 6,
+            marginBottom: 34,
+            backgroundColor: "#2c5cf6",
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
             fontSize: 120,
-            fontWeight: 600,
+            fontWeight: 700,
             letterSpacing: -3,
           }}
         >
@@ -65,13 +74,13 @@ export default async function OpengraphImage({
             display: "flex",
             marginTop: 20,
             fontSize: 34,
-            color: "#d6d3d1",
+            color: "#c2c8d2",
           }}
         >
           {dict.hero.statement}
         </div>
       </div>
-      <div style={{ display: "flex", fontSize: 26, color: "#a8a29e" }}>
+      <div style={{ display: "flex", fontSize: 26, color: "#8a93a1" }}>
         {domain}
       </div>
     </div>,

@@ -1,6 +1,6 @@
 # ibrahimasylla.com
 
-The personal website of **Ibrahima Sylla** — a static, bilingual, single-page
+The personal website of **Ibrahima Sylla**, a static, bilingual, single-page
 site built with Next.js and exported as plain HTML. Live at
 **[ibrahimasylla.com](https://ibrahimasylla.com)**.
 
@@ -8,19 +8,19 @@ site built with Next.js and exported as plain HTML. Live at
 
 ## Overview
 
-A deliberately small, editorial single-page site. The goals are clarity,
+A deliberately small, structural single-page site. The goals are clarity,
 longevity, and performance rather than novelty.
 
-- **Fully static** — exported to HTML/CSS/JS (`output: "export"`), hostable
+- **Fully static**: exported to HTML/CSS/JS (`output: "export"`), hostable
   anywhere, with no server runtime.
-- **Bilingual** — English and French, served from separate, indexable URLs
+- **Bilingual**: English and French, served from separate, indexable URLs
   (`/en`, `/fr`) with correct `hreflang` alternates.
-- **Light & dark themes** — system-aware, with no flash on load.
-- **SEO-complete** — per-locale metadata, canonical links, sitemap, robots,
+- **Light & dark themes**: system-aware, with no flash on load.
+- **SEO-complete**: per-locale metadata, canonical links, sitemap, robots,
   web manifest, JSON-LD, and generated OpenGraph images.
-- **Accessible & resilient** — keyboard-friendly, reduced-motion aware, and
+- **Accessible & resilient**: keyboard-friendly, reduced-motion aware, and
   fully readable without JavaScript.
-- **Measured motion** — restrained entrance and scroll animations.
+- **Measured motion**: restrained entrance and scroll animations.
 
 ## Tech stack
 

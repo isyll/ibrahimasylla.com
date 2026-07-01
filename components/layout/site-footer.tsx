@@ -9,11 +9,11 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/70">
+    <footer className="border-t border-border">
       <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:items-end sm:justify-between">
-        <div className="space-y-1.5">
+        <div>
           <p className="text-sm text-foreground">{dict.footer.colophon}</p>
-          <p className="text-xs text-muted-foreground">
+          <p className="mt-1.5 font-mono text-xs text-muted-foreground">
             © {year} {siteConfig.name}. {dict.footer.rights}
           </p>
         </div>
@@ -28,7 +28,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
                   {...(link.key === "email"
                     ? {}
                     : { target: "_blank", rel: "noreferrer noopener" })}
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-muted-foreground transition-colors hover:text-brand"
                 >
                   <SocialIcon name={link.key} className="size-[1.05rem]" />
                 </a>
@@ -38,7 +38,7 @@ export function SiteFooter({ dict }: { dict: Dictionary }) {
           <span aria-hidden="true" className="h-4 w-px bg-border" />
           <a
             href="#top"
-            className="inline-flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+            className="inline-flex items-center gap-1 font-mono text-xs tracking-wide text-muted-foreground uppercase transition-colors hover:text-foreground"
           >
             {dict.footer.backToTop}
             <ArrowUp className="size-3.5" aria-hidden="true" />

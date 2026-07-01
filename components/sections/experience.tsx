@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import { Section, SectionTitle } from "@/components/layout/section";
+import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/motion/reveal";
 import { experiences } from "@/content/experience";
 import type { Locale } from "@/i18n/config";
@@ -15,17 +15,21 @@ export function Experience({
   dict: Dictionary;
 }) {
   return (
-    <Section id="experience" kicker={dict.experience.kicker}>
-      <Reveal>
-        <SectionTitle>{dict.experience.title}</SectionTitle>
-      </Reveal>
-
-      <ol className="mt-8 sm:mt-10">
+    <Section
+      id="experience"
+      index="02"
+      kicker={dict.experience.kicker}
+      title={dict.experience.title}
+    >
+      <ol className="border-t border-border/60">
         {experiences.map((item) => (
           <li key={item.company}>
             <Reveal>
-              <article className="border-t border-border/60 py-6">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <article className="group grid gap-x-8 gap-y-3 border-b border-border/60 py-7 sm:grid-cols-[9rem_1fr]">
+                <div className="font-mono text-xs text-muted-foreground tabular-nums transition-colors group-hover:text-brand">
+                  {pick(item.period, locale)}
+                </div>
+                <div className="min-w-0">
                   <h3 className="text-base font-medium">
                     {pick(item.role, locale)}
                     <span className="text-muted-foreground"> · </span>
@@ -34,10 +38,10 @@ export function Experience({
                         href={item.url}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="group inline-flex items-center gap-0.5 text-muted-foreground transition-colors hover:text-foreground"
+                        className="group/link inline-flex items-center gap-0.5 text-muted-foreground transition-colors hover:text-foreground"
                       >
                         {item.company}
-                        <ArrowUpRight className="size-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
+                        <ArrowUpRight className="size-3.5 opacity-0 transition-opacity group-hover/link:opacity-100" />
                       </a>
                     ) : (
                       <span className="text-muted-foreground">
@@ -45,21 +49,18 @@ export function Experience({
                       </span>
                     )}
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
-                    {pick(item.period, locale)}
-                  </span>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {pick(item.location, locale)}
+                    <span className="text-border"> · </span>
+                    {pick(item.arrangement, locale)}
+                  </p>
+                  <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-muted-foreground">
+                    {pick(item.description, locale)}
+                  </p>
+                  <p className="mt-4 font-mono text-xs text-muted-foreground/70">
+                    {item.stack.join("  ·  ")}
+                  </p>
                 </div>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {pick(item.location, locale)}
-                  <span className="text-border"> · </span>
-                  {pick(item.arrangement, locale)}
-                </p>
-                <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-muted-foreground">
-                  {pick(item.description, locale)}
-                </p>
-                <p className="mt-3 font-mono text-xs text-muted-foreground/80">
-                  {item.stack.join("  ·  ")}
-                </p>
               </article>
             </Reveal>
           </li>

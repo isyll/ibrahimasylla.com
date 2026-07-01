@@ -1,4 +1,4 @@
-import { Section, SectionTitle } from "@/components/layout/section";
+import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/motion/reveal";
 import { education } from "@/content/education";
 import { skillGroups } from "@/content/skills";
@@ -14,57 +14,54 @@ export function Background({
   dict: Dictionary;
 }) {
   return (
-    <Section id="background" kicker={dict.background.kicker}>
+    <Section
+      id="background"
+      index="04"
+      kicker={dict.background.kicker}
+      title={dict.background.title}
+    >
       <Reveal>
-        <SectionTitle>{dict.background.title}</SectionTitle>
+        <h3 className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          {dict.background.educationLabel}
+        </h3>
       </Reveal>
-
-      <div className="mt-8 sm:mt-10">
-        <Reveal>
-          <h3 className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
-            {dict.background.educationLabel}
-          </h3>
-        </Reveal>
-        <ul className="mt-4">
-          {education.map((item) => (
-            <li key={item.degree.en}>
-              <Reveal>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 border-t border-border/60 py-4">
-                  <div className="min-w-0">
-                    <p className="text-[0.95rem] font-medium">
-                      {pick(item.degree, locale)}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {item.school}
-                    </p>
-                  </div>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums">
-                    {item.period}
-                  </span>
+      <ul className="mt-5 border-t border-border/60">
+        {education.map((item) => (
+          <li key={item.degree.en}>
+            <Reveal>
+              <div className="grid gap-x-8 gap-y-1 border-b border-border/60 py-4 sm:grid-cols-[9rem_1fr]">
+                <span className="font-mono text-xs text-muted-foreground tabular-nums">
+                  {pick(item.period, locale)}
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[0.95rem] font-medium">
+                    {pick(item.degree, locale)}
+                  </p>
+                  <p className="text-sm text-muted-foreground">{item.school}</p>
                 </div>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
-
-        <Reveal>
-          <h3 className="mt-12 font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
-            {dict.background.toolkitLabel}
-          </h3>
-        </Reveal>
-        <dl className="mt-4 space-y-4">
-          {skillGroups.map((group) => (
-            <Reveal key={group.label.en}>
-              <div className="grid gap-1 border-t border-border/60 py-3 sm:grid-cols-[8rem_1fr] sm:gap-4">
-                <dt className="text-sm text-muted-foreground">
-                  {pick(group.label, locale)}
-                </dt>
-                <dd className="text-[0.95rem]">{group.items.join(", ")}</dd>
               </div>
             </Reveal>
-          ))}
-        </dl>
-      </div>
+          </li>
+        ))}
+      </ul>
+
+      <Reveal>
+        <h3 className="mt-14 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
+          {dict.background.toolkitLabel}
+        </h3>
+      </Reveal>
+      <dl className="mt-5 border-t border-border/60">
+        {skillGroups.map((group) => (
+          <Reveal key={group.label.en}>
+            <div className="grid gap-1 border-b border-border/60 py-4 sm:grid-cols-[9rem_1fr] sm:gap-8">
+              <dt className="font-mono text-xs tracking-wide text-muted-foreground uppercase">
+                {pick(group.label, locale)}
+              </dt>
+              <dd className="text-[0.95rem]">{group.items.join(", ")}</dd>
+            </div>
+          </Reveal>
+        ))}
+      </dl>
     </Section>
   );
 }

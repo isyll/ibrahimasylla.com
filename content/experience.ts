@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     company: "Soft Valley Labs",
     url: "https://softvalleylabs.com",
     role: { en: "Software Developer", fr: "Développeur logiciel" },
-    period: { en: "2024 — Present", fr: "2024 — Aujourd’hui" },
+    period: { en: "2024 to Present", fr: "2024 à aujourd’hui" },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     arrangement: { en: "Full-time · On-site", fr: "Temps plein · Sur site" },
     description: {
@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     company: "Groupe Sonatel",
     url: "https://www.sonatel.sn",
     role: { en: "Full-stack Developer", fr: "Développeur full-stack" },
-    period: { en: "2023 — 2024", fr: "2023 — 2024" },
+    period: { en: "2023 to 2024", fr: "2023 à 2024" },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     arrangement: { en: "Internship · On-site", fr: "Stage · Sur site" },
     description: {

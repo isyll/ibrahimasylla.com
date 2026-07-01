@@ -3,7 +3,7 @@ import type { Localized } from "@/i18n/localized";
 export interface Education {
   degree: Localized;
   school: string;
-  period: string;
+  period: Localized;
   location: Localized;
 }
 
@@ -14,7 +14,7 @@ export const education: Education[] = [
       fr: "Master en génie logiciel",
     },
     school: "Institut Supérieur d’Informatique (ISI)",
-    period: "2024 — 2026",
+    period: { en: "2024 to 2026", fr: "2024 à 2026" },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
   },
   {
@@ -22,8 +22,8 @@ export const education: Education[] = [
       en: "Bachelor’s in Network Administration & Management",
       fr: "Licence en administration et gestion des réseaux",
     },
-    school: "Institut Polytechnique de Dakar — Thomas Sankara",
-    period: "2023 — 2024",
+    school: "Institut Polytechnique de Dakar · Thomas Sankara",
+    period: { en: "2023 to 2024", fr: "2023 à 2024" },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
   },
   {
@@ -32,7 +32,7 @@ export const education: Education[] = [
       fr: "Certificat professionnel, développement web & mobile",
     },
     school: "Sonatel Academy",
-    period: "2023",
+    period: { en: "2023", fr: "2023" },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
   },
   {
@@ -40,8 +40,8 @@ export const education: Education[] = [
       en: "Advanced Technician Diploma, Network Administration & Management",
       fr: "DTS en administration et gestion des réseaux",
     },
-    school: "Institut Polytechnique de Dakar — Thomas Sankara",
-    period: "2020 — 2022",
+    school: "Institut Polytechnique de Dakar · Thomas Sankara",
+    period: { en: "2020 to 2022", fr: "2020 à 2022" },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
   },
 ];

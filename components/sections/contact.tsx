@@ -1,20 +1,21 @@
 import { ArrowUpRight } from "lucide-react";
 
 import { SocialIcon } from "@/components/icons";
-import { Section, SectionTitle } from "@/components/layout/section";
+import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/motion/reveal";
 import { siteConfig, socialLinks } from "@/config/site";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 export function Contact({ dict }: { dict: Dictionary }) {
   return (
-    <Section id="contact" kicker={dict.contact.kicker}>
+    <Section
+      id="contact"
+      index="05"
+      kicker={dict.contact.kicker}
+      title={dict.contact.title}
+    >
       <Reveal>
-        <SectionTitle>{dict.contact.title}</SectionTitle>
-      </Reveal>
-
-      <Reveal>
-        <p className="mt-6 max-w-xl text-[1.05rem] leading-relaxed text-muted-foreground">
+        <p className="max-w-xl text-[1.05rem] leading-relaxed text-muted-foreground">
           {dict.contact.body}
         </p>
       </Reveal>
@@ -22,7 +23,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
       <Reveal>
         <a
           href={`mailto:${siteConfig.email}`}
-          className="group mt-8 inline-flex items-center gap-2 font-display text-2xl tracking-tight transition-colors hover:text-muted-foreground sm:text-3xl"
+          className="group mt-8 inline-flex items-center gap-2 font-display text-2xl tracking-tight transition-colors hover:text-brand sm:text-3xl"
         >
           {siteConfig.email}
           <ArrowUpRight className="size-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -30,11 +31,11 @@ export function Contact({ dict }: { dict: Dictionary }) {
       </Reveal>
 
       <Reveal>
-        <div className="mt-12">
-          <p className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
+        <div className="mt-14">
+          <p className="font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
             {dict.contact.elsewhere}
           </p>
-          <ul className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <ul className="mt-5 flex flex-wrap items-center gap-x-8 gap-y-3">
             {socialLinks
               .filter((link) => link.key !== "email")
               .map((link) => (
@@ -43,9 +44,12 @@ export function Contact({ dict }: { dict: Dictionary }) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="hover-line group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    <SocialIcon name={link.key} className="size-4" />
+                    <SocialIcon
+                      name={link.key}
+                      className="size-4 transition-colors group-hover:text-brand"
+                    />
                     {link.label}
                   </a>
                 </li>

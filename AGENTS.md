@@ -5,9 +5,9 @@ others) working in this repository. Humans are welcome to read it too.
 
 ## What this is
 
-The personal website of Ibrahima Sylla — a static, bilingual (English and
+The personal website of Ibrahima Sylla, a static, bilingual (English and
 French), single-page site deployed at <https://ibrahimasylla.com>. It is
-intentionally small, calm, and editorial. Keep it that way.
+intentionally small, calm, and structural. Keep it that way.
 
 ## Tech stack
 
@@ -34,13 +34,13 @@ Run `pnpm check` before considering any change complete.
 
 ## Project layout
 
-- `app/` — App Router. `app/[lang]/` holds the localized routes; `app/page.tsx`
+- `app/`: App Router. `app/[lang]/` holds the localized routes; `app/page.tsx`
   redirects `/` to a locale.
-- `components/` — `sections/` (page sections), `layout/` (header, footer,
+- `components/`: `sections/` (page sections), `layout/` (header, footer,
   section primitives), `motion/`, `providers/`, `ui/` (shadcn).
-- `content/` — structured data (experience, projects, education, skills).
-- `i18n/` — locale config, dictionaries (`en`, `fr`), and helpers.
-- `config/site.ts` — site constants, driven by `NEXT_PUBLIC_*` env vars.
+- `content/`: structured data (experience, projects, education, skills).
+- `i18n/`: locale config, dictionaries (`en`, `fr`), and helpers.
+- `config/site.ts`: site constants, driven by `NEXT_PUBLIC_*` env vars.
 
 ## Conventions
 
@@ -62,6 +62,8 @@ Run `pnpm check` before considering any change complete.
 
 ## Design intent
 
-Mature, quiet, and professional — editorial typography on a warm neutral
-palette with a single restrained accent. Avoid gradients, glassmorphism,
-particle effects, emoji, and anything that reads as a generic template.
+Mature, structural, and confident: a cool, high-contrast palette (near-black
+ink on near-white) with a single cobalt accent. Geometric sans display type
+(Space Grotesk) alongside monospace labels, numbered sections, and hairline
+rules. Avoid gradients, glassmorphism, particle effects, emoji, warm pastel
+tones, and anything that reads as a generic template.

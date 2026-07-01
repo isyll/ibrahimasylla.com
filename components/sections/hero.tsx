@@ -11,40 +11,50 @@ import { cn } from "@/lib/utils";
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const resume = pick(siteConfig.resume, locale);
+  const role = pick(siteConfig.role, locale);
+  const location = pick(siteConfig.location, locale);
 
   return (
     <section id="top" className="scroll-mt-24">
-      <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-20 sm:py-28">
+      <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-24 sm:py-28">
         <Reveal>
-          <p className="inline-flex items-center gap-2.5 font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60 [animation-duration:2.5s] motion-reduce:hidden" />
-              <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
+            <span className="inline-flex items-center gap-2.5">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/60 animation-duration-[2.5s] motion-reduce:hidden" />
+                <span className="relative inline-flex size-2 rounded-full bg-brand" />
+              </span>
+              {dict.hero.availability}
             </span>
-            {dict.hero.availability}
-          </p>
+            <span aria-hidden="true" className="text-border">
+              /
+            </span>
+            <span>
+              {role} · {location}
+            </span>
+          </div>
         </Reveal>
 
-        <Reveal delay={0.06} className="mt-6">
-          <h1 className="font-display text-5xl leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+        <Reveal delay={0.06} className="mt-8">
+          <h1 className="font-display text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.95] font-semibold tracking-tight text-balance">
             {siteConfig.name}
           </h1>
         </Reveal>
 
-        <Reveal delay={0.12} className="mt-5">
-          <p className="max-w-xl font-display text-xl text-balance text-muted-foreground sm:text-2xl">
+        <Reveal delay={0.12} className="mt-6">
+          <p className="max-w-2xl font-display text-xl text-balance text-foreground/90 sm:text-2xl">
             {dict.hero.statement}
           </p>
         </Reveal>
 
-        <Reveal delay={0.18} className="mt-6">
+        <Reveal delay={0.18} className="mt-5">
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
             {dict.hero.lead}
           </p>
         </Reveal>
 
-        <Reveal delay={0.24} className="mt-9">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+        <Reveal delay={0.24} className="mt-10">
+          <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
             <a
               href="#contact"
               className={cn(buttonVariants({ size: "lg" }), "h-10 px-5")}
@@ -53,7 +63,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </a>
             <a
               href="#work"
-              className="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+              className="hover-line text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {dict.hero.ctaWork}
             </a>

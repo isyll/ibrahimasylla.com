@@ -39,27 +39,32 @@ export function SiteHeader({
       className={cn(
         "sticky top-0 z-50 border-b transition-colors duration-300",
         scrolled
-          ? "border-border/70 bg-background/80 backdrop-blur-md"
+          ? "border-border bg-background/85 backdrop-blur-md"
           : "border-transparent",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href={`/${locale}`}
-          className="font-display text-base font-medium tracking-tight transition-opacity hover:opacity-70"
+          className="group inline-flex items-center gap-2.5"
         >
-          {siteConfig.name}
+          <span className="grid size-7 place-items-center rounded-sm bg-brand font-mono text-[0.7rem] font-semibold text-brand-foreground">
+            {siteConfig.initials}
+          </span>
+          <span className="font-display text-sm font-medium tracking-tight transition-opacity group-hover:opacity-70">
+            {siteConfig.name}
+          </span>
         </Link>
 
         <nav
           aria-label={dict.nav.label}
-          className="hidden items-center gap-8 text-sm sm:flex"
+          className="hidden items-center gap-7 sm:flex"
         >
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="hover-line font-mono text-xs tracking-[0.15em] text-muted-foreground uppercase transition-colors hover:text-foreground"
             >
               {item.label}
             </a>

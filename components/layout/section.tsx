@@ -7,58 +7,38 @@ import { Container } from "./container";
 
 export function Section({
   id,
+  index,
   kicker,
+  title,
   children,
   className,
-  divider = true,
 }: {
   id: string;
+  index: string;
   kicker: string;
+  title: ReactNode;
   children: ReactNode;
   className?: string;
-  divider?: boolean;
 }) {
   return (
-    <section
-      id={id}
-      className={cn("scroll-mt-24", divider && "border-t border-border/70")}
-    >
-      <Container>
-        <div
-          className={cn(
-            "grid gap-x-10 gap-y-6 py-16 sm:grid-cols-[7rem_1fr] sm:py-24 lg:grid-cols-[9rem_1fr]",
-            className,
-          )}
-        >
-          <div className="sm:pt-1.5">
-            <Reveal>
-              <p className="font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
-                {kicker}
-              </p>
-            </Reveal>
+    <section id={id} className="scroll-mt-24 border-t border-border">
+      <Container className="py-16 sm:py-24">
+        <Reveal>
+          <div className="flex items-center gap-3 font-mono text-xs tracking-[0.2em] uppercase">
+            <span className="text-brand">{index}</span>
+            <span aria-hidden="true" className="text-border">
+              /
+            </span>
+            <span className="text-muted-foreground">{kicker}</span>
           </div>
-          <div className="min-w-0">{children}</div>
-        </div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h2 className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-balance sm:text-4xl">
+            {title}
+          </h2>
+        </Reveal>
+        <div className={cn("mt-10 sm:mt-14", className)}>{children}</div>
       </Container>
     </section>
-  );
-}
-
-export function SectionTitle({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <h2
-      className={cn(
-        "font-display text-2xl tracking-tight text-balance sm:text-3xl",
-        className,
-      )}
-    >
-      {children}
-    </h2>
   );
 }
