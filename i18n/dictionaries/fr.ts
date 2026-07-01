@@ -18,7 +18,7 @@ export const fr: Dictionary = {
   },
   about: {
     kicker: "À propos",
-    title: "En quelques mots",
+    title: "Aperçu",
     paragraphs: [
       "J’ai commencé par l’administration des réseaux et des systèmes, avant de me tourner vers le développement logiciel.",
       "Aujourd’hui, je développe des applications web et mobiles, de l’interface aux systèmes qui les font tourner. J’ai travaillé avec un groupe télécom, une agence internationale, et en indépendant.",
@@ -27,10 +27,10 @@ export const fr: Dictionary = {
   },
   experience: {
     kicker: "Expérience",
-    title: "Là où j’ai travaillé",
+    title: "Parcours professionnel",
   },
   work: {
-    kicker: "Projets choisis",
+    kicker: "Projets",
     title: "Réalisations",
     note: "Le reste de mon travail est sur GitHub.",
     viewProject: "Voir le projet",
@@ -44,7 +44,7 @@ export const fr: Dictionary = {
   },
   contact: {
     kicker: "Contact",
-    title: "Me contacter",
+    title: "Contact",
     body: "Le meilleur moyen de me joindre est par e-mail.",
     emailLabel: "Envoyer un e-mail",
     elsewhere: "Ailleurs",

@@ -11,6 +11,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "ibrahimasylla.com",
+    url: "https://github.com/isyll/ibrahimasylla.com",
+    year: "2026",
+    category: { en: "Personal website", fr: "Site personnel" },
+    description: {
+      en: "This site. A static, bilingual, single-page site built with Next.js and exported as static HTML.",
+      fr: "Ce site. Un site statique et bilingue, d’une seule page, construit avec Next.js et exporté en HTML statique.",
+    },
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
     name: "Wave",
     url: "https://github.com/isyll/wave",
     year: "2024",

@@ -16,7 +16,7 @@ export const en = {
   },
   about: {
     kicker: "About",
-    title: "A short version",
+    title: "Overview",
     paragraphs: [
       "I started in network and systems administration, then moved into software development.",
       "Today I build web and mobile applications, from the interface to the systems behind it. I’ve worked with a telecom group, an international agency, and as a freelancer.",
@@ -25,10 +25,10 @@ export const en = {
   },
   experience: {
     kicker: "Experience",
-    title: "Where I’ve worked",
+    title: "Work history",
   },
   work: {
-    kicker: "Selected work",
+    kicker: "Work",
     title: "Projects",
     note: "More of my work is on GitHub.",
     viewProject: "View project",
@@ -42,7 +42,7 @@ export const en = {
   },
   contact: {
     kicker: "Contact",
-    title: "Get in touch",
+    title: "Contact",
     body: "The best way to reach me is by email.",
     emailLabel: "Send an email",
     elsewhere: "Elsewhere",

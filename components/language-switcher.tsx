@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Fragment } from "react";
 
-import { locales, type Locale } from "@/i18n/config";
+import { LocaleFlag } from "@/components/icons";
+import { localeNames, locales, type Locale } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 
 export function LanguageSwitcher({
@@ -14,33 +14,34 @@ export function LanguageSwitcher({
   label: string;
 }) {
   return (
-    <div
-      role="group"
-      aria-label={label}
-      className="flex items-center gap-1.5 font-mono text-xs"
-    >
-      {locales.map((value, index) => (
-        <Fragment key={value}>
-          {index > 0 && (
-            <span aria-hidden="true" className="text-border">
-              /
-            </span>
-          )}
+    <div role="group" aria-label={label} className="flex items-center gap-2.5">
+      {locales.map((value) => {
+        const active = value === locale;
+        return (
           <Link
+            key={value}
             href={`/${value}`}
             hrefLang={value}
-            aria-current={value === locale ? "true" : undefined}
+            aria-current={active ? "true" : undefined}
+            title={localeNames[value]}
             className={cn(
-              "tracking-wide uppercase transition-colors",
-              value === locale
-                ? "text-foreground"
-                : "text-muted-foreground hover:text-foreground",
+              "relative flex items-center rounded-[3px] transition-opacity",
+              active ? "opacity-100" : "opacity-40 hover:opacity-100",
             )}
           >
-            {value}
+            <span className="sr-only">{localeNames[value]}</span>
+            <span className="block h-3.5 overflow-hidden rounded-[3px] ring-1 ring-border/70">
+              <LocaleFlag locale={value} className="block h-full w-auto" />
+            </span>
+            {active && (
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-1.5 left-1/2 h-0.5 w-3.5 -translate-x-1/2 rounded-full bg-brand"
+              />
+            )}
           </Link>
-        </Fragment>
-      ))}
+        );
+      })}
     </div>
   );
 }

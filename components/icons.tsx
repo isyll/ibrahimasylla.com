@@ -2,6 +2,7 @@ import { Mail } from "lucide-react";
 import type { SVGProps } from "react";
 
 import type { SocialKey } from "@/config/site";
+import type { Locale } from "@/i18n/config";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
@@ -44,4 +45,54 @@ export function SocialIcon({
   className?: string;
 }) {
   return icons[name]({ className });
+}
+
+function FlagFR(props: IconProps) {
+  return (
+    <svg viewBox="0 0 3 2" aria-hidden="true" {...props}>
+      <rect width="3" height="2" fill="#f5f5f5" />
+      <rect width="1" height="2" fill="#0050a4" />
+      <rect x="2" width="1" height="2" fill="#e1000f" />
+    </svg>
+  );
+}
+
+function FlagEN(props: IconProps) {
+  return (
+    <svg viewBox="0 0 60 30" aria-hidden="true" {...props}>
+      <clipPath id="flag-en-frame">
+        <path d="M0 0v30h60V0z" />
+      </clipPath>
+      <clipPath id="flag-en-quad">
+        <path d="M30 15h30v15zv15H0zH0V0zV0h30z" />
+      </clipPath>
+      <g clipPath="url(#flag-en-frame)">
+        <path d="M0 0v30h60V0z" fill="#012169" />
+        <path d="M0 0 60 30M60 0 0 30" stroke="#fff" strokeWidth="6" />
+        <path
+          d="M0 0 60 30M60 0 0 30"
+          clipPath="url(#flag-en-quad)"
+          stroke="#c8102e"
+          strokeWidth="4"
+        />
+        <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10" />
+        <path d="M30 0v30M0 15h60" stroke="#c8102e" strokeWidth="6" />
+      </g>
+    </svg>
+  );
+}
+
+const flags: Record<Locale, (props: IconProps) => React.ReactNode> = {
+  en: (props) => <FlagEN {...props} />,
+  fr: (props) => <FlagFR {...props} />,
+};
+
+export function LocaleFlag({
+  locale,
+  className,
+}: {
+  locale: Locale;
+  className?: string;
+}) {
+  return flags[locale]({ className });
 }
