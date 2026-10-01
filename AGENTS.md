@@ -1,7 +1,9 @@
 # Agent guide
 
-Guidance for AI coding agents (Claude Code, GitHub Copilot, Codex, and
-others) working in this repository. Humans are welcome to read it too.
+Single source of truth for AI coding agents (Claude Code, GitHub Copilot,
+Codex, and others) working in this repository. `CLAUDE.md` and
+`.github/copilot-instructions.md` are symbolic links to this file; edit only
+`AGENTS.md`. Humans are welcome to read it too.
 
 ## What this is
 
@@ -13,57 +15,70 @@ intentionally small, calm, and structural. Keep it that way.
 
 - **Next.js 16** (App Router) exported as a fully static site
   (`output: "export"`)
-- **TypeScript 6** in strict mode
-- **Tailwind CSS v4** with **shadcn/ui** (Base UI primitives)
-- **motion** for animation, **next-themes** for light/dark
-- **pnpm** as the package manager (pinned via `packageManager`)
-- **Vitest** + Testing Library, **ESLint 10** (flat config), **Prettier**
+- **TypeScript 7** in strict mode
+- **Tailwind CSS v4**, no component library
+- **Phosphor** (light weight) for interface icons, **Simple Icons** for
+  technology logos, original SVG illustrations for everything else
+- **next-themes** for light/dark
+- **pnpm 12** as the package manager (pinned via `packageManager`), **Node 24**
+- **Biome** for linting, formatting and import sorting
+- **Vitest** + Testing Library, **cspell**, **markdownlint**
 
 ## Commands
 
 ```bash
 pnpm dev            # start the dev server
 pnpm build          # produce the static export in ./out
-pnpm check          # typecheck + lint + format + spell + markdown + test
+pnpm start          # serve ./out locally
+pnpm check          # typecheck + Biome + spell + markdown + test
+pnpm fix            # Biome: apply safe lint fixes and formatting
 pnpm test           # run the test suite
-pnpm lint           # ESLint
-pnpm format         # Prettier write
 ```
 
 Run `pnpm check` before considering any change complete.
 
 ## Project layout
 
-- `app/`: App Router. `app/[lang]/` holds the localized routes; `app/page.tsx`
-  redirects `/` to a locale.
+No `src/` directory; code lives at the repository root.
+
+- `app/`: App Router. `app/[lang]/` is the root layout of the localized
+  routes (it owns `<html lang>`); `app/(root)/` redirects `/` to a locale;
+  `app/global-not-found.tsx` is the bilingual 404.
 - `components/`: `sections/` (page sections), `layout/` (header, footer,
-  section primitives), `motion/`, `providers/`, `ui/` (shadcn).
-- `content/`: structured data (experience, projects, education, skills).
+  section primitives), `illustrations/` (original SVG art), `brand/`
+  (monogram).
+- `content/`: structured data (experience, projects, education, skills,
+  technologies).
 - `i18n/`: locale config, dictionaries (`en`, `fr`), and helpers.
 - `config/site.ts`: site constants, driven by `NEXT_PUBLIC_*` env vars.
+- `lib/`: fonts, metadata, isometric projection helpers, utilities.
+- `public/images/`: portrait and illustration raster assets.
 
 ## Conventions
 
-- **No `src/` directory.** Application code lives at the repository root.
 - **Bilingual by construction.** Every user-facing string lives in
   `i18n/dictionaries/{en,fr}.ts`, or as a `Localized<T>` (`{ en, fr }`) value
   in `content/`. Never hard-code copy in components. `en.ts` is the typed
   source of truth; `fr.ts` must match its shape.
 - **Server components by default.** Add `"use client"` only when a component
-  needs interactivity (header scroll state, theme/locale toggles, motion).
-- **Static-export safe.** No server actions, no runtime APIs, no
-  `next/image` optimization. Routes that generate files need
+  needs interactivity (theme toggle, locale redirect).
+- **Static-export safe.** No server actions, no runtime APIs. `next/image` is
+  used with `unoptimized`. Routes that generate files need
   `export const dynamic = "force-static"`.
-- **Animation is restrained.** Use the `Reveal` component; respect
-  `prefers-reduced-motion`; keep content visible without JavaScript.
+- **Technologies are data.** Add a logo once in `content/tech.ts` and refer to
+  it by key everywhere else.
+- **Motion is minimal.** One short entrance animation on the hero (`.rise`),
+  disabled under `prefers-reduced-motion`. No scroll-triggered animation.
 - **No decorative comments.** Write code that reads clearly on its own.
 - **Conventional Commits.** e.g. `feat(ui): ...`, `fix: ...`, `chore: ...`.
   Do not add co-author trailers.
 
 ## Design intent
 
-Mature, structural, and confident: a cool, high-contrast palette (near-black
-ink on near-white) with a single cobalt accent. Geometric sans display type
-(Space Grotesk) alongside monospace labels, numbered sections, and hairline
-rules. Avoid gradients, glassmorphism, particle effects, emoji, warm pastel
-tones, and anything that reads as a generic template.
+Sober, editorial, and mature. Warm off-white paper and deep ink-navy in dark
+mode, one Atlantic-blue accent and a sparing ochre signal color. Newsreader
+(serif display), Hanken Grotesk (text) and JetBrains Mono (labels), all open
+licensed. Hairline rules, generous space, less copy and more visuals:
+logos, diagrams and illustrations drawn for this site. A single portrait.
+Avoid gradients, frosted-glass effects, emoji, decorative animation, stock
+imagery, and anything that reads as a generic template or a sales pitch.
