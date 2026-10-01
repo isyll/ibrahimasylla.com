@@ -3,7 +3,7 @@
     "default": true,
     "MD013": false,
     "MD033": false,
-    "MD041": false,
+    "MD041": false
   },
-  "ignores": ["node_modules", ".next", "out", "coverage", "CHANGELOG.md"],
+  "ignores": ["node_modules", ".next", "out", "coverage", "CHANGELOG.md"]
 }

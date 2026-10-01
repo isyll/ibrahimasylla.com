@@ -1,10 +1,6 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(*)"
-    ],
-    "additionalDirectories": [
-      "/tmp"
-    ]
+    "allow": ["Bash(*)"],
+    "additionalDirectories": ["/tmp"]
   }
 }
