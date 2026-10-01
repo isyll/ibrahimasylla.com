@@ -1,11 +1,12 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Briefcase } from "@phosphor-icons/react/dist/ssr";
 
 import { Section } from "@/components/layout/section";
-import { Reveal } from "@/components/motion/reveal";
+import { TechChip } from "@/components/tech";
 import { experiences } from "@/content/experience";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { pick } from "@/i18n/localized";
+import { cn } from "@/lib/utils";
 
 export function Experience({
   locale,
@@ -17,52 +18,57 @@ export function Experience({
   return (
     <Section
       id="experience"
-      index="02"
-      kicker={dict.experience.kicker}
       title={dict.experience.title}
+      icon={<Briefcase aria-hidden="true" weight="light" className="size-7" />}
     >
-      <ol className="border-t border-border/60">
-        {experiences.map((item) => (
-          <li key={item.company}>
-            <Reveal>
-              <article className="group grid gap-x-8 gap-y-3 border-b border-border/60 py-7 sm:grid-cols-[9rem_1fr]">
-                <div className="font-mono text-xs text-muted-foreground tabular-nums transition-colors group-hover:text-brand">
-                  {pick(item.period, locale)}
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base font-medium">
-                    {pick(item.role, locale)}
-                    <span className="text-muted-foreground"> · </span>
-                    {item.url ? (
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="group/link inline-flex items-center gap-0.5 text-muted-foreground transition-colors hover:text-foreground"
-                      >
-                        {item.company}
-                        <ArrowUpRight className="size-3.5 opacity-0 transition-opacity group-hover/link:opacity-100" />
-                      </a>
-                    ) : (
-                      <span className="text-muted-foreground">
-                        {item.company}
-                      </span>
-                    )}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {pick(item.location, locale)}
-                    <span className="text-border"> · </span>
-                    {pick(item.arrangement, locale)}
-                  </p>
-                  <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-muted-foreground">
-                    {pick(item.description, locale)}
-                  </p>
-                  <p className="mt-4 font-mono text-xs text-muted-foreground/70">
-                    {item.stack.join("  ·  ")}
-                  </p>
-                </div>
-              </article>
-            </Reveal>
+      <ol className="border-l">
+        {experiences.map((item, index) => (
+          <li key={item.company} className="relative pb-12 pl-8 last:pb-0">
+            <span
+              aria-hidden="true"
+              className={cn(
+                "absolute top-1.5 -left-[5px] size-[9px] rounded-full border border-brand",
+                index === 0 ? "bg-brand" : "bg-background",
+              )}
+            />
+            <p className="font-mono text-muted-foreground text-xs tabular-nums">
+              {pick(item.period, locale)}
+            </p>
+            <h3 className="mt-1.5 font-medium text-lg">
+              {pick(item.role, locale)}
+              <span className="text-muted-foreground"> · </span>
+              {item.url ? (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group inline-flex items-center gap-0.5 text-muted-foreground transition-colors hover:text-brand"
+                >
+                  {item.company}
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-3.5 opacity-0 transition-opacity group-hover:opacity-100"
+                  />
+                </a>
+              ) : (
+                <span className="text-muted-foreground">{item.company}</span>
+              )}
+            </h3>
+            <p className="mt-1 text-muted-foreground text-sm">
+              {pick(item.location, locale)}
+              <span aria-hidden="true"> · </span>
+              {pick(item.arrangement, locale)}
+            </p>
+            <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed">
+              {pick(item.description, locale)}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {item.stack.map((key) => (
+                <li key={key}>
+                  <TechChip name={key} locale={locale} />
+                </li>
+              ))}
+            </ul>
           </li>
         ))}
       </ol>

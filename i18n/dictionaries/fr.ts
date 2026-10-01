@@ -3,62 +3,60 @@ import type { Dictionary } from "./en";
 export const fr: Dictionary = {
   nav: {
     label: "Sections",
-    about: "À propos",
+    menu: "Menu",
+    about: "Profil",
     experience: "Expérience",
     work: "Projets",
+    stack: "Stack",
     contact: "Contact",
   },
   hero: {
-    availability: "Disponible pour de nouveaux projets",
-    statement: "Je développe des applications web et mobiles.",
-    lead: "Je travaille sur le web et le mobile, autant sur l’interface que sur les systèmes qui la font tourner.",
-    ctaContact: "Me contacter",
-    ctaResume: "CV",
-    ctaWork: "Voir mes projets",
+    resume: "CV",
+    email: "E-mail",
+    layers: {
+      alt: "Schéma isométrique de trois couches superposées, réseau, systèmes et interface, reliées par une seule requête.",
+      interface: "Interface",
+      systems: "Systèmes",
+      network: "Réseau",
+    },
   },
   about: {
-    kicker: "À propos",
-    title: "Aperçu",
-    paragraphs: [
-      "J’ai commencé par l’administration des réseaux et des systèmes, avant de me tourner vers le développement logiciel.",
-      "Aujourd’hui, je développe des applications web et mobiles, de l’interface aux systèmes qui les font tourner. J’ai travaillé avec un groupe télécom, une agence internationale, et en indépendant.",
-      "Je suis actuellement développeur chez Soft Valley Labs.",
-    ],
+    title: "Profil",
+    portraitAlt: "Portrait d’Ibrahima Sylla",
+    location: "Basé à",
+    current: "Actuellement",
+    currentValue: "Développeur logiciel chez Soft Valley Labs",
+    origin: "Point de départ",
+    originValue: "Administration des réseaux et des systèmes",
+    focus: "Domaine",
+    focusValue: "Applications web et mobiles, du front au back",
   },
   experience: {
-    kicker: "Expérience",
-    title: "Parcours professionnel",
+    title: "Expérience",
   },
   work: {
-    kicker: "Projets",
-    title: "Réalisations",
-    note: "Le reste de mon travail est sur GitHub.",
-    viewProject: "Voir le projet",
-    viewGithub: "Parcourir GitHub",
+    title: "Projets",
+    github: "Tous les dépôts sur GitHub",
   },
-  background: {
-    kicker: "Parcours",
-    title: "Formation et outils",
-    educationLabel: "Formation",
-    toolkitLabel: "Outils",
+  stack: {
+    title: "Stack",
+  },
+  education: {
+    title: "Formation",
   },
   contact: {
-    kicker: "Contact",
     title: "Contact",
-    body: "Le meilleur moyen de me joindre est par e-mail.",
-    emailLabel: "Envoyer un e-mail",
-    elsewhere: "Ailleurs",
+    horizonAlt:
+      "Illustration d’une silhouette seule sur une dune, sous une étoile brillante au crépuscule.",
   },
   footer: {
     colophon: "Conçu et développé par Ibrahima Sylla.",
+    typefaces: "Composé en Newsreader, Hanken Grotesk et JetBrains Mono.",
     rights: "Tous droits réservés.",
-    backToTop: "Haut de page",
+    backToTop: "Haut",
   },
   theme: {
-    label: "Thème",
-    light: "Clair",
-    dark: "Sombre",
-    system: "Système",
+    label: "Changer de thème",
   },
   language: {
     label: "Langue",
@@ -66,8 +64,7 @@ export const fr: Dictionary = {
   meta: {
     title: "Ibrahima Sylla · Développeur logiciel",
     description:
-      "Ibrahima Sylla est un développeur logiciel à Dakar, au Sénégal, qui travaille sur des applications web et mobiles. Découvrez son expérience, ses projets et comment le contacter.",
-    ogAlt: "Ibrahima Sylla · Développeur logiciel",
+      "Ibrahima Sylla est un développeur logiciel basé à Dakar, au Sénégal. Applications web et mobiles, expérience, projets et contact.",
   },
   notFound: {
     title: "Cette page n’existe pas",

@@ -1,15 +1,15 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-import { Container } from "@/components/layout/container";
+import { Monogram } from "@/components/brand/monogram";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { siteConfig } from "@/config/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
-import { cn } from "@/lib/utils";
+
+import { Container } from "./container";
+import type { NavItem } from "./mobile-nav";
+import { MobileNav } from "./mobile-nav";
 
 export function SiteHeader({
   locale,
@@ -18,59 +18,37 @@ export function SiteHeader({
   locale: Locale;
   dict: Dictionary;
 }) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const nav = [
+  const items: NavItem[] = [
     { href: "#about", label: dict.nav.about },
     { href: "#experience", label: dict.nav.experience },
     { href: "#work", label: dict.nav.work },
+    { href: "#stack", label: dict.nav.stack },
     { href: "#contact", label: dict.nav.contact },
   ];
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 border-b transition-colors duration-300",
-        scrolled
-          ? "border-border bg-background/85 backdrop-blur-md"
-          : "border-transparent",
-      )}
-    >
+    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link
           href={`/${locale}`}
           aria-label={siteConfig.name}
-          className="group inline-flex items-center gap-2.5"
+          className="inline-flex items-center gap-3"
         >
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            className="size-4.5 shrink-0"
-          >
-            <path d="M0 0H24L0 24Z" className="fill-brand" />
-            <path d="M24 0V24H0Z" className="fill-current" />
-          </svg>
-          <span className="font-display text-[0.95rem] font-semibold tracking-tight transition-opacity group-hover:opacity-70">
+          <Monogram className="size-7 shrink-0" />
+          <span className="hidden font-display text-lg tracking-tight sm:inline">
             {siteConfig.name}
           </span>
         </Link>
 
         <nav
           aria-label={dict.nav.label}
-          className="hidden items-center gap-7 sm:flex"
+          className="hidden items-center gap-7 md:flex"
         >
-          {nav.map((item) => (
+          {items.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="hover-line font-mono text-xs tracking-[0.15em] text-muted-foreground uppercase transition-colors hover:text-foreground"
+              className="font-mono text-muted-foreground text-xs uppercase tracking-[0.14em] transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
@@ -81,6 +59,11 @@ export function SiteHeader({
           <LanguageSwitcher locale={locale} label={dict.language.label} />
           <span aria-hidden="true" className="h-4 w-px bg-border" />
           <ThemeToggle label={dict.theme.label} />
+          <MobileNav
+            items={items}
+            label={dict.nav.label}
+            menuLabel={dict.nav.menu}
+          />
         </div>
       </Container>
     </header>

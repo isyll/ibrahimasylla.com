@@ -1,62 +1,60 @@
 export const en = {
   nav: {
     label: "Sections",
-    about: "About",
+    menu: "Menu",
+    about: "Profile",
     experience: "Experience",
-    work: "Work",
+    work: "Projects",
+    stack: "Stack",
     contact: "Contact",
   },
   hero: {
-    availability: "Available for new work",
-    statement: "I build web and mobile applications.",
-    lead: "I work across web and mobile, on both the interface and the systems behind it.",
-    ctaContact: "Get in touch",
-    ctaResume: "Résumé",
-    ctaWork: "See my work",
+    resume: "Résumé",
+    email: "Email",
+    layers: {
+      alt: "Isometric diagram of three stacked layers, network, systems and interface, linked by a single request.",
+      interface: "Interface",
+      systems: "Systems",
+      network: "Network",
+    },
   },
   about: {
-    kicker: "About",
-    title: "Overview",
-    paragraphs: [
-      "I started in network and systems administration, then moved into software development.",
-      "Today I build web and mobile applications, from the interface to the systems behind it. I’ve worked with a telecom group, an international agency, and as a freelancer.",
-      "I’m currently a developer at Soft Valley Labs.",
-    ],
+    title: "Profile",
+    portraitAlt: "Portrait of Ibrahima Sylla",
+    location: "Based in",
+    current: "Now",
+    currentValue: "Software Developer at Soft Valley Labs",
+    origin: "Started in",
+    originValue: "Network and systems administration",
+    focus: "Focus",
+    focusValue: "Web and mobile applications, front to back",
   },
   experience: {
-    kicker: "Experience",
-    title: "Work history",
+    title: "Experience",
   },
   work: {
-    kicker: "Work",
     title: "Projects",
-    note: "More of my work is on GitHub.",
-    viewProject: "View project",
-    viewGithub: "Browse GitHub",
+    github: "All repositories on GitHub",
   },
-  background: {
-    kicker: "Background",
-    title: "Education and tools",
-    educationLabel: "Education",
-    toolkitLabel: "Tools",
+  stack: {
+    title: "Stack",
+  },
+  education: {
+    title: "Education",
   },
   contact: {
-    kicker: "Contact",
     title: "Contact",
-    body: "The best way to reach me is by email.",
-    emailLabel: "Send an email",
-    elsewhere: "Elsewhere",
+    horizonAlt:
+      "Illustration of a lone figure on a dune under a bright star at dusk.",
   },
   footer: {
     colophon: "Designed and built by Ibrahima Sylla.",
+    typefaces: "Set in Newsreader, Hanken Grotesk and JetBrains Mono.",
     rights: "All rights reserved.",
-    backToTop: "Back to top",
+    backToTop: "Top",
   },
   theme: {
-    label: "Theme",
-    light: "Light",
-    dark: "Dark",
-    system: "System",
+    label: "Toggle theme",
   },
   language: {
     label: "Language",
@@ -64,8 +62,7 @@ export const en = {
   meta: {
     title: "Ibrahima Sylla · Software Developer",
     description:
-      "Ibrahima Sylla is a software developer in Dakar, Senegal, working on web and mobile applications. See his experience, projects, and how to get in touch.",
-    ogAlt: "Ibrahima Sylla · Software Developer",
+      "Ibrahima Sylla is a software developer based in Dakar, Senegal. Web and mobile applications, experience, projects and contact.",
   },
   notFound: {
     title: "This page doesn’t exist",

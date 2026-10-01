@@ -1,5 +1,7 @@
 import type { Localized } from "@/i18n/localized";
 
+import type { TechKey } from "./tech";
+
 export interface Experience {
   company: string;
   url?: string;
@@ -8,7 +10,7 @@ export interface Experience {
   location: Localized;
   arrangement: Localized;
   description: Localized;
-  stack: string[];
+  stack: TechKey[];
 }
 
 export const experiences: Experience[] = [
@@ -20,10 +22,10 @@ export const experiences: Experience[] = [
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     arrangement: { en: "Full-time · On-site", fr: "Temps plein · Sur site" },
     description: {
-      en: "Building professional web and mobile applications across a broad range of technologies, from internal tools to client-facing products.",
-      fr: "Conception d’applications web et mobiles professionnelles sur un large éventail de technologies, des outils internes aux produits destinés aux clients.",
+      en: "Web and mobile applications, from internal tools to client products.",
+      fr: "Applications web et mobiles, des outils internes aux produits clients.",
     },
-    stack: ["Next.js", "React", "Django"],
+    stack: ["nextjs", "react", "django"],
   },
   {
     company: "Dscale",
@@ -32,10 +34,22 @@ export const experiences: Experience[] = [
     location: { en: "Dubai, UAE", fr: "Dubaï, Émirats arabes unis" },
     arrangement: { en: "Freelance · Remote", fr: "Freelance · À distance" },
     description: {
-      en: "Designed and shipped modern marketing sites with Next.js and CMS-driven content for an international agency.",
-      fr: "Conception et mise en ligne de sites vitrines modernes avec Next.js et des contenus pilotés par CMS pour une agence internationale.",
+      en: "Marketing sites with Next.js and a CMS for an international agency.",
+      fr: "Sites vitrines avec Next.js et un CMS pour une agence internationale.",
     },
-    stack: ["Next.js", "React", "WordPress"],
+    stack: ["nextjs", "react", "wordpress"],
+  },
+  {
+    company: "Kati360",
+    role: { en: "React Developer", fr: "Développeur React" },
+    period: { en: "2024", fr: "2024" },
+    location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
+    arrangement: { en: "Internship · Remote", fr: "Stage · À distance" },
+    description: {
+      en: "E-commerce interfaces built with React.",
+      fr: "Interfaces e-commerce développées avec React.",
+    },
+    stack: ["react", "redux", "express"],
   },
   {
     company: "Groupe Sonatel",
@@ -45,21 +59,9 @@ export const experiences: Experience[] = [
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     arrangement: { en: "Internship · On-site", fr: "Stage · Sur site" },
     description: {
-      en: "Developed internal enterprise applications for the group’s teams on a microservices architecture exposed through REST APIs.",
-      fr: "Développement d’applications d’entreprise internes pour les équipes du groupe, sur une architecture microservices exposée via des API REST.",
+      en: "Internal enterprise applications on a REST microservices architecture.",
+      fr: "Applications d’entreprise internes sur une architecture microservices REST.",
     },
-    stack: ["Symfony", "Laravel", "Angular"],
-  },
-  {
-    company: "Kati360",
-    role: { en: "React Developer", fr: "Développeur React" },
-    period: { en: "2024", fr: "2024" },
-    location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
-    arrangement: { en: "Internship · Remote", fr: "Stage · À distance" },
-    description: {
-      en: "Built fast, reliable e-commerce interfaces with the React ecosystem.",
-      fr: "Développement d’interfaces e-commerce rapides et fiables avec l’écosystème React.",
-    },
-    stack: ["React", "Redux", "Express.js"],
+    stack: ["symfony", "laravel", "angular"],
   },
 ];

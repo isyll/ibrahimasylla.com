@@ -1,83 +1,105 @@
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  EnvelopeSimple,
+  MapPin,
+} from "@phosphor-icons/react/dist/ssr";
+import type { CSSProperties } from "react";
+import { Fragment } from "react";
 
+import { SocialIcon } from "@/components/icons";
+import { StackLayers } from "@/components/illustrations/stack-layers";
 import { Container } from "@/components/layout/container";
-import { Reveal } from "@/components/motion/reveal";
-import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
+import { siteConfig, socialLinks } from "@/config/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { pick } from "@/i18n/localized";
-import { cn } from "@/lib/utils";
+
+const delay = (seconds: number) =>
+  ({ "--rise-delay": `${seconds}s` }) as CSSProperties;
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
-  const resume = pick(siteConfig.resume, locale);
-  const role = pick(siteConfig.role, locale);
-  const location = pick(siteConfig.location, locale);
+  const names = siteConfig.name.split(" ");
 
   return (
-    <section id="top" className="scroll-mt-24">
-      <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-24 sm:py-28">
-        <Reveal>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs tracking-[0.18em] text-muted-foreground uppercase">
-            <span className="inline-flex items-center gap-2.5">
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/60 animation-duration-[2.5s] motion-reduce:hidden" />
-                <span className="relative inline-flex size-2 rounded-full bg-brand" />
-              </span>
-              {dict.hero.availability}
-            </span>
-            <span aria-hidden="true" className="text-border">
+    <section id="top" className="scroll-mt-16">
+      <Container className="grid items-center gap-14 py-14 md:grid-cols-[1.1fr_1fr] md:gap-6 md:py-20 lg:min-h-[calc(100svh-4rem)]">
+        <div>
+          <p
+            className="rise flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-muted-foreground text-xs uppercase tracking-[0.14em]"
+            style={delay(0)}
+          >
+            <MapPin aria-hidden="true" weight="light" className="size-4" />
+            <span>{pick(siteConfig.location, locale)}</span>
+            <span aria-hidden="true" className="hidden text-border sm:inline">
               /
             </span>
-            <span>
-              {role} · {location}
-            </span>
-          </div>
-        </Reveal>
+            <span>{pick(siteConfig.coordinates, locale)}</span>
+          </p>
 
-        <Reveal delay={0.06} className="mt-8">
-          <h1 className="font-display text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.95] font-semibold tracking-tight text-balance">
-            {siteConfig.name}
+          <h1
+            className="rise mt-7 font-display text-[clamp(3.5rem,10vw,7.5rem)] leading-[0.9] tracking-[-0.03em]"
+            style={delay(0.08)}
+          >
+            {names.map((name, index) => (
+              <Fragment key={name}>
+                {index > 0 && " "}
+                <span className="block">{name}</span>
+              </Fragment>
+            ))}
           </h1>
-        </Reveal>
 
-        <Reveal delay={0.12} className="mt-6">
-          <p className="max-w-2xl font-display text-xl text-balance text-foreground/90 sm:text-2xl">
-            {dict.hero.statement}
+          <p className="rise mt-8 flex items-center gap-4" style={delay(0.16)}>
+            <span aria-hidden="true" className="h-px w-12 bg-brand" />
+            <span className="font-display text-2xl text-brand italic sm:text-3xl">
+              {pick(siteConfig.role, locale)}
+            </span>
           </p>
-        </Reveal>
 
-        <Reveal delay={0.18} className="mt-5">
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-            {dict.hero.lead}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.24} className="mt-10">
-          <div className="flex flex-wrap items-center gap-x-7 gap-y-4">
+          <div
+            className="rise mt-10 flex flex-wrap items-center gap-3"
+            style={delay(0.24)}
+          >
             <a
-              href="#contact"
-              className={cn(buttonVariants({ size: "lg" }), "h-10 px-5")}
+              href={`mailto:${siteConfig.email}`}
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-5 font-medium text-background text-sm transition-opacity hover:opacity-85"
             >
-              {dict.hero.ctaContact}
+              <EnvelopeSimple aria-hidden="true" className="size-4" />
+              {dict.hero.email}
             </a>
             <a
-              href="#work"
-              className="hover-line text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {dict.hero.ctaWork}
-            </a>
-            <a
-              href={resume}
+              href={pick(siteConfig.resume, locale)}
               target="_blank"
               rel="noreferrer noopener"
-              className="group inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex h-11 items-center gap-1.5 rounded-full border px-5 font-medium text-sm transition-colors hover:border-brand hover:text-brand"
             >
-              {dict.hero.ctaResume}
-              <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {dict.hero.resume}
+              <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
+            <ul className="flex items-center gap-2">
+              {socialLinks.map((link) => (
+                <li key={link.key}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={link.label}
+                    className="inline-flex size-11 items-center justify-center rounded-full border text-muted-foreground transition-colors hover:border-brand hover:text-brand"
+                  >
+                    <SocialIcon name={link.key} className="size-[1.05rem]" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-        </Reveal>
+        </div>
+
+        <div className="rise" style={delay(0.2)}>
+          <StackLayers
+            alt={dict.hero.layers.alt}
+            labels={dict.hero.layers}
+            className="mx-auto h-auto w-full max-w-[34rem]"
+          />
+        </div>
       </Container>
     </section>
   );

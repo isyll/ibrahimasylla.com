@@ -1,46 +1,66 @@
 import type { Localized } from "@/i18n/localized";
 
+import type { TechKey } from "./tech";
+
+export type ProjectCover = "modernize" | "site" | "wave" | "vlsm";
+
 export interface Project {
   name: string;
   url: string;
   year: string;
+  cover: ProjectCover;
   category: Localized;
   description: Localized;
-  stack: string[];
+  stack: TechKey[];
 }
 
 export const projects: Project[] = [
   {
+    name: "dart_modernize",
+    url: "https://github.com/isyll/dart_modernize",
+    year: "2026",
+    cover: "modernize",
+    category: { en: "Developer tool", fr: "Outil pour développeurs" },
+    description: {
+      en: "Modernizes Dart and Flutter code automatically, without changing what it does.",
+      fr: "Modernise automatiquement le code Dart et Flutter, sans changer son comportement.",
+    },
+    stack: ["dart", "flutter"],
+  },
+  {
     name: "ibrahimasylla.com",
     url: "https://github.com/isyll/ibrahimasylla.com",
     year: "2026",
+    cover: "site",
     category: { en: "Personal website", fr: "Site personnel" },
     description: {
-      en: "This site. A static, bilingual, single-page site built with Next.js and exported as static HTML.",
-      fr: "Ce site. Un site statique et bilingue, d’une seule page, construit avec Next.js et exporté en HTML statique.",
+      en: "This site: static, bilingual, one page.",
+      fr: "Ce site : statique, bilingue, une seule page.",
     },
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: ["nextjs", "typescript", "tailwind"],
   },
   {
     name: "Wave",
     url: "https://github.com/isyll/wave",
     year: "2024",
+    cover: "wave",
     category: { en: "Mobile application", fr: "Application mobile" },
     description: {
-      en: "A faithful rebuild of the Wave money-transfer app, used to explore mobile interface patterns and state management in Flutter.",
-      fr: "Une reconstruction fidèle de l’application de transfert d’argent Wave, pour explorer les patterns d’interface mobile et la gestion d’état avec Flutter.",
+      en: "A rebuild of the Wave money-transfer app.",
+      fr: "Une reconstruction de l’application de transfert d’argent Wave.",
     },
-    stack: ["Flutter", "Dart"],
+    stack: ["flutter", "dart"],
   },
   {
     name: "VLSM Calculator",
     url: "https://github.com/isyll/vlsmcalculator",
     year: "2024",
+    cover: "vlsm",
     category: { en: "Web tool", fr: "Outil web" },
     description: {
-      en: "A focused tool for planning IP address space with variable-length subnet masking, built for clarity over feature count.",
-      fr: "Un outil dédié à la planification d’adressage IP par masquage de sous-réseau à longueur variable, pensé pour la clarté plutôt que pour le nombre de fonctionnalités.",
+      en: "IP address planning with variable-length subnet masks.",
+      fr: "Planification d’adressage IP par masques de sous-réseau variables.",
     },
-    stack: ["React", "TypeScript"],
+    stack: ["react", "typescript"],
   },
 ];

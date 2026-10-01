@@ -1,43 +1,34 @@
 import type { ReactNode } from "react";
 
-import { Reveal } from "@/components/motion/reveal";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
 
 export function Section({
   id,
-  index,
-  kicker,
   title,
+  icon,
   children,
   className,
 }: {
   id: string;
-  index: string;
-  kicker: string;
-  title: ReactNode;
+  title: string;
+  icon: ReactNode;
   children: ReactNode;
   className?: string;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 border-t border-border">
-      <Container className="py-16 sm:py-24">
-        <Reveal>
-          <div className="flex items-center gap-3 font-mono text-xs tracking-[0.2em] uppercase">
-            <span className="text-brand">{index}</span>
-            <span aria-hidden="true" className="text-border">
-              /
-            </span>
-            <span className="text-muted-foreground">{kicker}</span>
+    <section id={id} className="scroll-mt-16 border-t">
+      <Container className="grid gap-8 py-16 md:grid-cols-[11rem_1fr] md:gap-12 md:py-24">
+        <header>
+          <div className="md:sticky md:top-28">
+            <span className="text-brand">{icon}</span>
+            <h2 className="mt-3 font-display text-3xl tracking-tight">
+              {title}
+            </h2>
           </div>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <h2 className="mt-4 max-w-3xl font-display text-3xl font-medium tracking-tight text-balance sm:text-4xl">
-            {title}
-          </h2>
-        </Reveal>
-        <div className={cn("mt-10 sm:mt-14", className)}>{children}</div>
+        </header>
+        <div className={cn("min-w-0", className)}>{children}</div>
       </Container>
     </section>
   );

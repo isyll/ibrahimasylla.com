@@ -8,8 +8,10 @@ export function JsonLd({ locale }: { locale: Locale }) {
     "@type": "Person",
     name: siteConfig.name,
     url: `${siteConfig.url}/${locale}`,
+    image: `${siteConfig.url}/images/portrait.jpg`,
     email: `mailto:${siteConfig.email}`,
     jobTitle: pick(siteConfig.role, locale),
+    worksFor: { "@type": "Organization", name: "Soft Valley Labs" },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Dakar",
@@ -21,6 +23,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
   return (
     <script
       type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD is serialized from static, trusted data.
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );

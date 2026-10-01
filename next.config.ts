@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
     root: import.meta.dirname,
   },
   experimental: {
-    optimizePackageImports: ["lucide-react", "motion"],
+    globalNotFound: true,
+    optimizePackageImports: ["@phosphor-icons/react"],
   },
 };
 

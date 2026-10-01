@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 
 import { About } from "@/components/sections/about";
-import { Background } from "@/components/sections/background";
 import { Contact } from "@/components/sections/contact";
+import { Education } from "@/components/sections/education";
 import { Experience } from "@/components/sections/experience";
 import { Hero } from "@/components/sections/hero";
+import { Stack } from "@/components/sections/stack";
 import { Work } from "@/components/sections/work";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -22,10 +23,11 @@ export default async function HomePage({
   return (
     <>
       <Hero locale={lang} dict={dict} />
-      <About dict={dict} />
+      <About locale={lang} dict={dict} />
       <Experience locale={lang} dict={dict} />
       <Work locale={lang} dict={dict} />
-      <Background locale={lang} dict={dict} />
+      <Stack locale={lang} dict={dict} />
+      <Education locale={lang} dict={dict} />
       <Contact dict={dict} />
     </>
   );

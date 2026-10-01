@@ -1,9 +1,8 @@
-"use client";
-
 import Link from "next/link";
 
 import { LocaleFlag } from "@/components/icons";
-import { localeNames, locales, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
+import { localeNames, locales } from "@/i18n/config";
 import { cn } from "@/lib/utils";
 
 export function LanguageSwitcher({
@@ -14,7 +13,7 @@ export function LanguageSwitcher({
   label: string;
 }) {
   return (
-    <div role="group" aria-label={label} className="flex items-center gap-2.5">
+    <nav aria-label={label} className="flex items-center gap-2.5">
       {locales.map((value) => {
         const active = value === locale;
         return (
@@ -25,12 +24,12 @@ export function LanguageSwitcher({
             aria-current={active ? "true" : undefined}
             title={localeNames[value]}
             className={cn(
-              "relative flex items-center rounded-[3px] transition-opacity",
+              "relative flex items-center transition-opacity",
               active ? "opacity-100" : "opacity-40 hover:opacity-100",
             )}
           >
             <span className="sr-only">{localeNames[value]}</span>
-            <span className="block h-3.5 overflow-hidden rounded-[3px] ring-1 ring-border/70">
+            <span className="block h-3.5 overflow-hidden rounded-[3px] ring-1 ring-border">
               <LocaleFlag locale={value} className="block h-full w-auto" />
             </span>
             {active && (
@@ -42,6 +41,6 @@ export function LanguageSwitcher({
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 }

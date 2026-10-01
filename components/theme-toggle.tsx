@@ -1,10 +1,8 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "@phosphor-icons/react/dist/ssr";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-
-import { Button } from "@/components/ui/button";
 
 export function ThemeToggle({ label }: { label: string }) {
   const { resolvedTheme, setTheme } = useTheme();
@@ -12,25 +10,19 @@ export function ThemeToggle({ label }: { label: string }) {
 
   useEffect(() => setMounted(true), []);
 
-  const isDark = resolvedTheme === "dark";
+  const isDark = mounted && resolvedTheme === "dark";
+  const Icon = isDark ? Sun : Moon;
 
   return (
-    <Button
+    <button
       type="button"
-      variant="ghost"
-      size="icon-sm"
       aria-label={label}
       onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
     >
       {mounted ? (
-        isDark ? (
-          <Sun aria-hidden="true" />
-        ) : (
-          <Moon aria-hidden="true" />
-        )
-      ) : (
-        <span className="size-4" />
-      )}
-    </Button>
+        <Icon aria-hidden="true" weight="light" className="size-5" />
+      ) : null}
+    </button>
   );
 }
