@@ -13,7 +13,7 @@ export const siteConfig = {
     fr: "14°41′ N · 17°27′ O",
   } as Localized,
   url: normalizeUrl(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ibrahimasylla.com",
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ibrahimasylla.com",
   ),
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "isyll711@gmail.com",
   resume: {

@@ -2,7 +2,7 @@
 
 The personal website of **Ibrahima Sylla**, a static, bilingual, single-page
 site built with Next.js and exported as plain HTML. Live at
-**[ibrahimasylla.com](https://ibrahimasylla.com)**.
+**[ibrahimasylla.com](https://www.ibrahimasylla.com)**.
 
 [![CI](https://github.com/isyll/ibrahimasylla.com/actions/workflows/ci.yml/badge.svg)](https://github.com/isyll/ibrahimasylla.com/actions/workflows/ci.yml)
 
@@ -17,7 +17,7 @@ illustrations, technology logos and a single portrait.
   (`/en`, `/fr`) with a correct `<html lang>` and `hreflang` alternates.
 - **Light & dark themes**: system-aware, with no flash on load.
 - **Original artwork**: an isometric diagram (network, systems, interface),
-  project covers and a monogram, all drawn as SVG in this repository.
+  project covers and a logo mark, all drawn as SVG in this repository.
 - **SEO-complete**: per-locale metadata, canonical links, sitemap, robots,
   web manifest, JSON-LD, and generated OpenGraph images.
 - **Accessible & resilient**: keyboard-friendly, reduced-motion aware, and

@@ -8,7 +8,7 @@ Codex, and others) working in this repository. `CLAUDE.md` and
 ## What this is
 
 The personal website of Ibrahima Sylla, a static, bilingual (English and
-French), single-page site deployed at <https://ibrahimasylla.com>. It is
+French), single-page site deployed at <https://www.ibrahimasylla.com>. It is
 intentionally small, calm, and structural. Keep it that way.
 
 ## Tech stack
@@ -42,17 +42,19 @@ Run `pnpm check` before considering any change complete.
 No `src/` directory; code lives at the repository root.
 
 - `app/`: App Router. `app/[lang]/` is the root layout of the localized
-  routes (it owns `<html lang>`); `app/(root)/` redirects `/` to a locale;
-  `app/global-not-found.tsx` is the bilingual 404.
+  routes (it owns `<html lang>`); `app/global-not-found.tsx` is the bilingual
+  404. `/` is redirected to a locale by `vercel.json` (Accept-Language), with
+  `public/index.html` as the fallback on other static hosts.
 - `components/`: `sections/` (page sections), `layout/` (header, footer,
   section primitives), `illustrations/` (original SVG art), `brand/`
-  (monogram).
+  (logo mark).
 - `content/`: structured data (experience, projects, education, skills,
   technologies).
 - `i18n/`: locale config, dictionaries (`en`, `fr`), and helpers.
 - `config/site.ts`: site constants, driven by `NEXT_PUBLIC_*` env vars.
 - `lib/`: fonts, metadata, isometric projection helpers, utilities.
-- `public/images/`: portrait and illustration raster assets.
+- `public/`: `index.html` (locale fallback), `images/` (portrait and
+  illustration), `icons/`, résumés.
 
 ## Conventions
 
