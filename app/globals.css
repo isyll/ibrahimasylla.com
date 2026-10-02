@@ -29,6 +29,7 @@
   --brand: oklch(0.42 0.1 245);
   --brand-foreground: oklch(0.985 0.004 88);
   --ochre: oklch(0.66 0.12 62);
+  --sky: #10171f;
 }
 
 .dark {
@@ -41,6 +42,7 @@
   --brand: oklch(0.76 0.09 235);
   --brand-foreground: oklch(0.175 0.022 255);
   --ochre: oklch(0.78 0.11 70);
+  --sky: #223149;
 }
 
 @layer base {

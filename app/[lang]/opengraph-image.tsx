@@ -36,7 +36,7 @@ export default async function OpengraphImage({
     readFile(path.join(process.cwd(), "public/images/portrait.jpg")),
   ]);
   const portraitSrc = `data:image/jpeg;base64,${portrait.toString("base64")}`;
-  const domain = siteConfig.url.replace(/^https?:\/\//, "");
+  const domain = siteConfig.url.replace(/^https?:\/\/(www\.)?/, "");
   const [first, ...rest] = siteConfig.name.split(" ");
 
   return new ImageResponse(
@@ -60,19 +60,22 @@ export default async function OpengraphImage({
           flex: 1,
         }}
       >
-        {/* biome-ignore lint/a11y/noSvgWithoutTitle: decorative mark inside a generated image. */}
-        <svg
-          width="56"
-          height="56"
-          viewBox="0 0 32 32"
-          fill="none"
-          strokeWidth="3"
-        >
-          <rect width="32" height="32" rx="7" fill="#efede7" />
-          <path stroke="#0a111a" d="M9 7V25" />
+        <svg width="56" height="56" viewBox="0 0 32 32">
+          <title>Ibrahima Sylla</title>
+          <defs>
+            <clipPath id="disc">
+              <circle cx="16" cy="16" r="16" />
+            </clipPath>
+          </defs>
+          <circle cx="16" cy="16" r="16" fill="#223149" />
           <path
-            stroke="#0a111a"
-            d="M24.5 11.5A4.5 4.5 0 1 0 20 16A4.5 4.5 0 1 1 15.5 20.5"
+            clipPath="url(#disc)"
+            d="M0 23C8 19.5 17 19.5 32 24.5V32H0Z"
+            fill="#c6803c"
+          />
+          <path
+            d="M18.5 5Q19.5 11.5 26 12.5Q19.5 13.5 18.5 20Q17.5 13.5 11 12.5Q17.5 11.5 18.5 5Z"
+            fill="#f7f6f1"
           />
         </svg>
 
