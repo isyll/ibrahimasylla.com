@@ -1,9 +1,27 @@
-import { ArrowsLeftRight, Graph } from "@phosphor-icons/react/dist/ssr";
-import type { TechKey } from "@/content/tech";
+import {
+  ArrowsLeftRight,
+  BracketsCurly,
+  Database,
+  Graph,
+  Plugs,
+} from "@phosphor-icons/react/dist/ssr";
+import type { ComponentType } from "react";
+import type { TechGlyph, TechKey } from "@/content/tech";
 import { tech } from "@/content/tech";
 import type { Locale } from "@/i18n/config";
 import { pick } from "@/i18n/localized";
 import { cn } from "@/lib/utils";
+
+const glyphs: Record<
+  TechGlyph,
+  ComponentType<{ className?: string; weight?: "light"; "aria-hidden"?: true }>
+> = {
+  api: ArrowsLeftRight,
+  network: Graph,
+  orm: Database,
+  framework: BracketsCurly,
+  rpc: Plugs,
+};
 
 export function techLabel(key: TechKey, locale: Locale): string {
   const { label } = tech[key];
@@ -32,11 +50,10 @@ export function TechIcon({
     );
   }
 
-  const Glyph =
-    "glyph" in entry && entry.glyph === "api" ? ArrowsLeftRight : Graph;
+  const Glyph = "glyph" in entry && entry.glyph ? glyphs[entry.glyph] : Graph;
   return (
     <Glyph
-      aria-hidden="true"
+      aria-hidden
       weight="light"
       className={cn("size-4 shrink-0", className)}
     />

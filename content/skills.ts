@@ -10,18 +10,30 @@ export interface SkillGroup {
 export const skillGroups: SkillGroup[] = [
   {
     label: { en: "Languages", fr: "Langages" },
-    items: ["typescript", "javascript", "java", "php", "dart", "python"],
+    items: ["typescript", "javascript", "go", "java", "dart", "python"],
   },
   {
-    label: { en: "Frontend", fr: "Frontend" },
-    items: ["react", "nextjs", "angular", "tailwind"],
+    label: { en: "Frontend & mobile", fr: "Frontend & mobile" },
+    items: ["react", "nextjs", "angular", "tailwind", "flutter"],
   },
   {
     label: { en: "Backend", fr: "Backend" },
-    items: ["nodejs", "springboot", "laravel", "symfony", "django"],
+    items: [
+      "gin",
+      "gorm",
+      "huma",
+      "springboot",
+      "nodejs",
+      "laravel",
+      "symfony",
+      "django",
+    ],
   },
   {
-    label: { en: "Mobile & foundations", fr: "Mobile & fondamentaux" },
-    items: ["flutter", "rest", "networks", "git"],
+    label: {
+      en: "Data & infrastructure",
+      fr: "Données & infrastructure",
+    },
+    items: ["postgresql", "redis", "docker", "grpc", "rest", "networks", "git"],
   },
 ];
