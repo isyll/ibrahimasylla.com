@@ -8,7 +8,7 @@
         {
           "type": "header",
           "key": "accept-language",
-          "value": "(?i)^\\s*fr"
+          "value": "^fr.*"
         }
       ],
       "destination": "/fr",
